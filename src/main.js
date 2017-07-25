@@ -4,15 +4,23 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
+import axios from './http'
+import store from './store/store'
 import '../static/css/theme-green/index.css';    
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.prototype.$axios = axios;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  axios,
+  store,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  data: {
+  	eventHub: new Vue()
+  }
 })

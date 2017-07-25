@@ -19,6 +19,8 @@
 </template>
 
 <script>
+    import querystring from 'querystring'  
+    import * as types from '@/store/types'
     export default {
         data: function(){
             return {
@@ -41,8 +43,14 @@
                 const self = this;
                 self.$refs[formName].validate((valid) => {
                     if (valid) {
-                        localStorage.setItem('ms_username',self.ruleForm.username);
-                        self.$router.push('/Home');
+                        //localStorage.setItem('ms_username',self.ruleForm.username);
+                       // self.$router.push('/readme');
+                        self.$axios.post('http://localhost:2301/token', querystring.stringify({username:self.ruleForm.username,password: self.ruleForm.password, grant_type:'password'})).then( (res) => {
+                                self.$store.commit(types.LOGIN, res.data.token_type+" "+ res.data.access_token)
+                                self.$router.push('/readme');
+                            }).catch((error) => {
+                                 console.log('error')
+                                })
                     } else {
                         console.log('error submit!!');
                         return false;
