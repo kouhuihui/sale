@@ -24,11 +24,11 @@ export default new Router({
             {
                 path: '/basetable',
                 component: resolve => require(['../components/page/BaseTable/BaseTable.vue'], resolve)
-            }//,
-            // {
-            //     path: '/vuetable',
-            //     component: resolve => require(['../components/page/VueTable.vue'], resolve)     // vue-datasource组件
-            // },
+            },
+            {
+               path: '/user',
+               component: resolve => require(['../components/page/user/index.vue'], resolve)      
+            }
             // {
             //     path: '/baseform',
             //     component: resolve => require(['../components/page/BaseForm.vue'], resolve)

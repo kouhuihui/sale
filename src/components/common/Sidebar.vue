@@ -32,7 +32,7 @@
                     {
                         icon: 'el-icon-menu',
                         index: '2',
-                        title: '表格',
+                        title: '',
                         subs: [
                             {
                                 index: 'basetable',
@@ -47,11 +47,11 @@
                     {
                         icon: 'el-icon-date',
                         index: '3',
-                        title: '表单',
+                        title: '系统管理',
                         subs: [
                             {
-                                index: 'baseform',
-                                title: '基本表单'
+                                index: 'user',
+                                title: '用户管理'
                             },
                             {
                                 index: 'vueeditor',

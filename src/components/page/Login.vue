@@ -45,7 +45,11 @@
                     if (valid) {
                         //localStorage.setItem('ms_username',self.ruleForm.username);
                        // self.$router.push('/readme');
-                        self.$axios.post('http://localhost:2301/token', querystring.stringify({username:self.ruleForm.username,password: self.ruleForm.password, grant_type:'password'})).then( (res) => {
+                        self.$axios.post('http://localhost:2301/token', querystring.stringify({username:self.ruleForm.username,password: self.ruleForm.password, grant_type:'password'}),{
+                                headers: {
+                                    "Content-Type":'application/x-www-form-urlencoded'
+                                }
+                            }).then( (res) => {
                                 self.$store.commit(types.LOGIN, res.data.token_type+" "+ res.data.access_token)
                                 self.$router.push('/readme');
                             }).catch((error) => {

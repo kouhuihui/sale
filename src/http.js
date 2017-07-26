@@ -9,6 +9,7 @@ import router from './router'
 
 // axios 配置
 axios.defaults.timeout = 30000;
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 //axios.defaults.baseURL = 'https://api.github.com';
 
 // http request 拦截器
