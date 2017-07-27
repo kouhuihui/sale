@@ -3,7 +3,11 @@
 		<el-table :data="tableData" border style="width: 100%">
             <el-table-column prop="name" label="姓名" sortable width="150">
             </el-table-column>
-           <el-table-column prop="username" label="登录名" sortable width="150">
+            <el-table-column prop="userName" label="登录名" sortable>
+            </el-table-column>
+            <el-table-column prop="telephone" label="手机号码" >
+            </el-table-column>
+            <el-table-column prop="" label="角色" sortable width="150">
             </el-table-column>
             <el-table-column label="操作" width="200">
                 <template scope="scope">
@@ -14,12 +18,6 @@
                 </template>
             </el-table-column>
         </el-table>
-        <div class="pagination">
-            <el-pagination
-                    layout="prev, pager, next"
-                    :total="1000">
-            </el-pagination>
-        </div>
 	</div>
 </template>
 <script>
